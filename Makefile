@@ -3,6 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=kmod-fs-virtiofs
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
+FS_MENU:=Filesystems
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_CONFIG_DEPENDS := CONFIG_VIRTIO_FS

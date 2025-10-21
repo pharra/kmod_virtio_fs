@@ -1,6 +1,0 @@
-config KERNEL_VIRTIO_FS
-    bool "Enable Virtiofs support"
-    default y
-    depends on KERNEL_FUSE_FS
-    help
-      Enable support for Virtiofs in the kernel.

@@ -13,7 +13,7 @@ include $(INCLUDE_DIR)/kernel.mk
 
 define KernelPackage/fs-virtiofs
   SECTION:=sys
-  CATEGORY:=Kernel
+  CATEGORY:=Kernel modules
   SUBMENU:=$(FS_MENU)
   TITLE:=Kernel support for Virtio-FS
   DEPENDS:=+kmod-fuse

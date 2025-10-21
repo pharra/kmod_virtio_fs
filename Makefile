@@ -11,6 +11,8 @@ PKG_CONFIG_DEPENDS := CONFIG_VIRTIO_FS
 include $(INCLUDE_DIR)/kernel.mk
 
 define KernelPackage/fs-virtiofs
+  SECTION:=sys
+  CATEGORY:=Kernel
   SUBMENU:=$(FS_MENU)
   TITLE:=Kernel support for Virtio-FS
   DEPENDS:=+kmod-fuse

@@ -26,4 +26,17 @@ define KernelPackage/fs-virtiofs/description
   Kernel module for Virtiofs filesystem support
 endef
 
+define Build/Prepare
+    mkdir -p $(PKG_BUILD_DIR)
+    $(CP) ./src/* $(PKG_BUILD_DIR)/
+endef
+
+define Build/Compile
+    $(MAKE) -C "$(LINUX_DIR)" \
+        ARCH="$(LINUX_KARCH)" \
+        CROSS_COMPILE="$(TARGET_CROSS)" \
+        SUBDIRS="$(PKG_BUILD_DIR)" \
+        modules
+endef
+
 $(eval $(call KernelPackage,fs-virtiofs))

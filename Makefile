@@ -8,9 +8,12 @@ FS_MENU:=Filesystems
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_CONFIG_DEPENDS := CONFIG_VIRTIO_FS
 
+include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 define KernelPackage/fs-virtiofs
+  SECTION:=sys
+  CATEGORY:=Kernel modules
   SUBMENU:=$(FS_MENU)
   TITLE:=Kernel support for Virtio-FS
   DEPENDS:=+kmod-fuse
